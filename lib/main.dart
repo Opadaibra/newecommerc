@@ -1,11 +1,16 @@
-import 'package:ecommerc/View/Screen/OnBoarding.dart';
+import 'package:ecommerc/Core/Localization/changelocal.dart';
+import 'package:ecommerc/Core/Localization/translation.dart';
+import 'package:ecommerc/Core/services/services.dart';
+import 'package:ecommerc/View/Screen/Language.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:ecommerc/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initalservices();
   runApp(const MyApp());
 }
 
@@ -15,12 +20,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Loclacontroller controller = Get.put(Loclacontroller());
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark));
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      locale: controller.language,
+      translations: MyTranslation(),
       theme: ThemeData(
           fontFamily: "PlayfairDisplay",
           primarySwatch: Colors.blue,
@@ -35,7 +43,7 @@ class MyApp extends StatelessWidget {
                 fontSize: 20,
                 color: AppColor.black),
           )),
-      home: const OnBoarding(),
+      home: const Language(),
       routes: routes,
     );
   }

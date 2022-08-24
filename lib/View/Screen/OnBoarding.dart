@@ -4,6 +4,7 @@ import 'package:ecommerc/Controller/OnBoardingContoller.dart';
 import 'package:ecommerc/View/Widget/CustomButton.dart';
 import 'package:ecommerc/View/Widget/CustomSlider.dart';
 import 'package:ecommerc/View/Widget/dotController.dart';
+import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,7 @@ class OnBoarding extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImp());
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColor.backGround,
         body: SafeArea(
           child: Column(
             children: [
