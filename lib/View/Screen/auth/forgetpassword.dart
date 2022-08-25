@@ -1,25 +1,33 @@
-import 'package:ecommerc/Controller/auth/logInController.dart';
+import 'package:ecommerc/Controller/auth/ForgetPasswordController.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
-import 'package:ecommerc/View/Widget/auth/customtextauth.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
-import 'package:ecommerc/View/Widget/auth/logoauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../Widget/auth/customtexttbodyauth.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class ForgetPassword extends StatelessWidget {
+  const ForgetPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    LogInControllerImp controller = Get.put(LogInControllerImp());
-
+    // TextEditingController email = TextEditingController();
+    // TextEditingController password = TextEditingController();
+    ForgetpasswordControllerImp controller =
+        Get.put(ForgetpasswordControllerImp());
     return Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: Text("Sign In",
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: AppColor.grey,
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+          title: Text("Forget Password",
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -37,55 +45,37 @@ class Login extends StatelessWidget {
             child: ListView(
               children: [
                 const SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
-                const Logoauth(),
                 const SizedBox(
                   height: 20,
                 ),
                 const Customtitltetextauth(
-                  title: "Welcome Back",
+                  title: "Check Email ",
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 const Custombodyauth(
                   body:
-                      "Sign in with Your Email And Password OR Continue With Social Media",
+                      "Sign Up with Your Email And Password OR Continue With Social Media",
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomTextField(
-                    hinttext: "Enter Your Email",
-                    labeltext: "Email",
-                    iconData: Icons.email_outlined,
-                    mycontroller: controller.email),
-                CustomTextField(
-                    hinttext: "Enter Your Password",
-                    labeltext: "Password",
-                    iconData: Icons.lock_outline,
-                    mycontroller: controller.password),
-                InkWell(
-                    onTap: () {
-                      controller.gotoforgetpassword();
-                    },
-                    child: const Text("Forget Password",
-                        textAlign: TextAlign.start)),
+                  hinttext: "Enter Your Email",
+                  labeltext: "Email",
+                  iconData: Icons.email_outlined,
+                  mycontroller: controller.email,
+                ),
                 Customauthbutton(
-                  text: "Sign In ",
+                  text: "Check ",
                   onPressed: () {},
                 ),
                 const SizedBox(
                   height: 40,
                 ),
-                CustomTextauth(
-                  text1: "You Don't Have an account?",
-                  text2: "Sign Up",
-                  onTap: () {
-                    controller.gotosignup();
-                  },
-                )
               ],
             ),
           ),

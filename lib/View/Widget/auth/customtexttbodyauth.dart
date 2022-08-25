@@ -10,7 +10,7 @@ class Custombodyauth extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       body,
-      style: Theme.of(context).textTheme.bodyText1,
+      style: Theme.of(context).textTheme.bodyText2,
       textAlign: TextAlign.center,
     );
   }

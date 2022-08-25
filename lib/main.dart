@@ -46,6 +46,11 @@ class NewTheme {
             color: AppColor.grey,
             fontWeight: FontWeight.bold,
             fontSize: 17),
+        bodyText2: TextStyle(
+            height: 2,
+            color: AppColor.grey,
+            fontWeight: FontWeight.normal,
+            fontSize: 14),
         headline1: TextStyle(
             fontWeight: FontWeight.bold, fontSize: 20, color: AppColor.black),
         headline2: TextStyle(
