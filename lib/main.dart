@@ -29,22 +29,26 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.language,
       translations: MyTranslation(),
-      theme: ThemeData(
-          fontFamily: "PlayfairDisplay",
-          primarySwatch: Colors.blue,
-          textTheme: const TextTheme(
-            bodyText1: TextStyle(
-                height: 2,
-                color: AppColor.grey,
-                fontWeight: FontWeight.bold,
-                fontSize: 17),
-            headline1: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-                color: AppColor.black),
-          )),
+      theme: NewTheme.myTheme,
       home: const Language(),
       routes: routes,
     );
   }
+}
+
+class NewTheme {
+  static ThemeData myTheme = ThemeData(
+      fontFamily: "PlayfairDisplay",
+      primarySwatch: Colors.blue,
+      textTheme: const TextTheme(
+        bodyText1: TextStyle(
+            height: 2,
+            color: AppColor.grey,
+            fontWeight: FontWeight.bold,
+            fontSize: 17),
+        headline1: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 20, color: AppColor.black),
+        headline2: TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 26, color: AppColor.black),
+      ));
 }
