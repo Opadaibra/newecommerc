@@ -1,5 +1,6 @@
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
+import 'package:ecommerc/View/Widget/auth/logoauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import '../../Widget/auth/customtexttbodyauth.dart';
@@ -26,6 +27,7 @@ class Login extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
           child: ListView(
             children: [
+              const Logoauth(),
               const SizedBox(
                 height: 20,
               ),
