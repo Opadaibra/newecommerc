@@ -4,12 +4,12 @@ import 'package:ecommerc/data/datasource/static/Approut.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-abstract class ForgetpasswordController extends GetxController {
+abstract class CheckemailController extends GetxController {
   checkemail();
-  gotoverifycode();
+  gotosuccesSignup();
 }
 
-class ForgetpasswordControllerImp extends ForgetpasswordController {
+class CheckemailControllerImp extends CheckemailController {
   late TextEditingController email;
 
 
@@ -17,8 +17,8 @@ class ForgetpasswordControllerImp extends ForgetpasswordController {
   checkemail() {}
 
   @override
-  gotoverifycode() {
-    Get.toNamed(AppRout.verifycode);
+  gotosuccesSignup() {
+    Get.toNamed(AppRout.successsignup);
   }
 
   @override

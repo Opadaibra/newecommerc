@@ -1,21 +1,20 @@
-import 'package:ecommerc/Controller/auth/ForgetPasswordController.dart';
+import 'package:ecommerc/Controller/auth/checkemailcontroller.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
+import 'package:ecommerc/View/Widget/auth/customtexttbodyauth.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../Widget/auth/customtexttbodyauth.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({Key? key}) : super(key: key);
+class Checkemail extends StatelessWidget {
+  const Checkemail({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TextEditingController email = TextEditingController();
     // TextEditingController password = TextEditingController();
-    ForgetpasswordControllerImp controller =
-        Get.put(ForgetpasswordControllerImp());
+    CheckemailControllerImp controller = Get.put(CheckemailControllerImp());
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -27,7 +26,7 @@ class ResetPassword extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("Forget Password",
+          title: Text("Check email",
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -51,14 +50,14 @@ class ResetPassword extends StatelessWidget {
                   height: 20,
                 ),
                 const Customtitltetextauth(
-                  title: "Check Email ",
+                  title: "Success SignUp ",
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 const Custombodyauth(
                   body:
-                      "Sign Up with Your Email And Password OR Continue With Social Media",
+                      "Please Enter your Email Address to Recive A verfication code",
                 ),
                 const SizedBox(
                   height: 30,
@@ -71,7 +70,9 @@ class ResetPassword extends StatelessWidget {
                 ),
                 Customauthbutton(
                   text: "Check ",
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.gotosuccesSignup();
+                  },
                 ),
                 const SizedBox(
                   height: 40,

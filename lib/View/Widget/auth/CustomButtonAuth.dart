@@ -20,7 +20,7 @@ class Customauthbutton extends StatelessWidget {
         color: color,
         borderRadius: BorderRadius.circular(30),
         child: MaterialButton(
-          onPressed: () {},
+          onPressed: onPressed,
           textColor: Colors.white,
           child: Text(text),
         ),

@@ -1,3 +1,6 @@
+
+// ignore_for_file: file_names
+
 import 'package:ecommerc/Controller/auth/signUp.Controller.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
@@ -95,7 +98,9 @@ class SignUp extends StatelessWidget {
                 //const Text("Forget Password", textAlign: TextAlign.start),
                 Customauthbutton(
                   text: "Sign Up ",
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.signup();
+                  },
                 ),
                 const SizedBox(
                   height: 40,

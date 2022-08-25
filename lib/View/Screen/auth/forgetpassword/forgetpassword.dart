@@ -5,7 +5,7 @@ import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../Widget/auth/customtexttbodyauth.dart';
+import '../../../Widget/auth/customtexttbodyauth.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({Key? key}) : super(key: key);
@@ -58,7 +58,7 @@ class ForgetPassword extends StatelessWidget {
                 ),
                 const Custombodyauth(
                   body:
-                      "Sign Up with Your Email And Password OR Continue With Social Media",
+                      "Please Enter your Email Address to Recive A verfication code",
                 ),
                 const SizedBox(
                   height: 30,
@@ -71,7 +71,10 @@ class ForgetPassword extends StatelessWidget {
                 ),
                 Customauthbutton(
                   text: "Check ",
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.gotoverifycode();
+              
+                  },
                 ),
                 const SizedBox(
                   height: 40,

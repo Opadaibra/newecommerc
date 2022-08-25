@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
-  login();
+  signup();
   gotosignin();
 }
 
@@ -16,7 +16,9 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController password;
 
   @override
-  login() {}
+  signup() {
+    Get.offNamed(AppRout.checkemail);
+  }
 
   @override
   gotosignin() {

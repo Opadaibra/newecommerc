@@ -7,4 +7,7 @@ class AppRout {
   static const String verifycode = "/verifycode";
   static const String forgetpassword = "/forgetpassword";
   static const String resetpassword = "/resetpasssword";
+  static const String success = "/success";
+  static const String successsignup = "/successsignup";
+  static const String checkemail = "/checkemail";
 }

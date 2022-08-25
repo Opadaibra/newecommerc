@@ -1,0 +1,86 @@
+
+import 'package:ecommerc/Controller/auth/verifycode.dart';
+
+import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
+import 'package:ecommerc/data/datasource/static/color.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
+
+
+class Verifycode extends StatelessWidget {
+  const Verifycode({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TextEditingController email = TextEditingController();
+    // TextEditingController password = TextEditingController();
+    VerifycodeControllreImp controller = Get.put(VerifycodeControllreImp());
+    return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back,
+              color: AppColor.grey,
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+          title: Text("Verification Code",
+              style: Theme.of(context)
+                  .textTheme
+                  .headline1!
+                  .copyWith(color: AppColor.grey)),
+          centerTitle: true,
+          backgroundColor: AppColor.backGround,
+          elevation: 0,
+        ),
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+          child: ScrollConfiguration(
+            behavior: const ScrollBehavior(
+                // ignore: deprecated_member_use
+                androidOverscrollIndicator: AndroidOverscrollIndicator.stretch),
+            child: ListView(
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Customtitltetextauth(
+                  title:
+                      "Enter The code that you have recived on your Email Address",
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                OtpTextField(
+                  showFieldAsBox: true,
+                  showCursor: false,
+                  fieldWidth: 50,
+                  numberOfFields: 5,
+                  borderColor: AppColor.primary,
+                  focusedBorderColor: AppColor.primary,
+                  borderRadius: BorderRadius.circular(20),
+                  onSubmit: (String code) {
+                    controller.gotoresetpassword();
+                  },
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+}

@@ -1,21 +1,21 @@
-import 'package:ecommerc/Controller/auth/ForgetPasswordController.dart';
+import 'package:ecommerc/Controller/auth/resetpasswordcontroller.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../Widget/auth/customtexttbodyauth.dart';
+import '../../../Widget/auth/customtexttbodyauth.dart';
 
-class Verifycode extends StatelessWidget {
-  const Verifycode({Key? key}) : super(key: key);
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TextEditingController email = TextEditingController();
     // TextEditingController password = TextEditingController();
-    ForgetpasswordControllerImp controller =
-        Get.put(ForgetpasswordControllerImp());
+    ResetPasswordControllreImp controller =
+        Get.put(ResetPasswordControllreImp());
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -27,7 +27,7 @@ class Verifycode extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("Verification Code",
+          title: Text("Reset Password",
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -51,22 +51,34 @@ class Verifycode extends StatelessWidget {
                   height: 20,
                 ),
                 const Customtitltetextauth(
-                  title: "Check Email ",
+                  title: "New Password",
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 const Custombodyauth(
-                  body:
-                      "Sign Up with Your Email And Password OR Continue With Social Media",
+                  body: "Enter new Strong password and try not forget it",
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                
+                CustomTextField(
+                  hinttext: "Enter Your password",
+                  labeltext: "password",
+                  iconData: Icons.lock_outline,
+                  mycontroller: controller.password,
+                ),
+                CustomTextField(
+                  hinttext: "re Enter Your password",
+                  labeltext: "re password",
+                  iconData: Icons.lock_outline,
+                  mycontroller: controller.repassword,
+                ),
                 Customauthbutton(
-                  text: "Check ",
-                  onPressed: () {},
+                  text: "save ",
+                  onPressed: () {
+                    controller.gotosuccess();
+                  },
                 ),
                 const SizedBox(
                   height: 40,
