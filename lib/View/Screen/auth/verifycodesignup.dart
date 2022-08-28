@@ -1,22 +1,21 @@
-import 'package:ecommerc/Controller/auth/resetpasswordcontroller.dart';
-import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
-import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
+import 'package:ecommerc/Controller/auth/verifycode.dart';
+import 'package:ecommerc/Controller/auth/verifycodesignupcontroller.dart';
+
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import '../../../Widget/auth/customtexttbodyauth.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({Key? key}) : super(key: key);
+class VerifycodeSignUp extends StatelessWidget {
+  const VerifycodeSignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // TextEditingController email = TextEditingController();
     // TextEditingController password = TextEditingController();
-    ResetPasswordControllreImp controller =
-        Get.put(ResetPasswordControllreImp());
-    
+    VerifycodesignupControllre controller =
+        Get.put(VerifycodesignupControllreImp());
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -28,7 +27,7 @@ class ResetPassword extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("41".tr,
+          title: Text("42".tr,
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -51,33 +50,27 @@ class ResetPassword extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Customtitltetextauth(
-                  title: "35".tr,
+                Customtitltetextauth(title: "43".tr),
+                const SizedBox(
+                  height: 20,
+                ),
+                OtpTextField(
+                  showFieldAsBox: true,
+                  showCursor: false,
+                  fieldWidth: 50,
+                  numberOfFields: 5,
+                  borderColor: AppColor.primary,
+                  focusedBorderColor: AppColor.primary,
+                  borderRadius: BorderRadius.circular(20),
+                  onSubmit: (String code) {
+                    controller.gotosuccesssignup();
+                  },
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Custombodyauth(body: "34".tr),
                 const SizedBox(
                   height: 30,
-                ),
-                CustomTextField(
-                  hinttext: "13".tr,
-                  labeltext: "19".tr,
-                  iconData: Icons.lock_outline,
-                  mycontroller: controller.password,
-                ),
-                CustomTextField(
-                  hinttext: "44".tr,
-                  labeltext: "45".tr,
-                  iconData: Icons.lock_outline,
-                  mycontroller: controller.repassword,
-                ),
-                Customauthbutton(
-                  text: "33".tr,
-                  onPressed: () {
-                    controller.gotosuccess();
-                  },
                 ),
                 const SizedBox(
                   height: 40,

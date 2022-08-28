@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:ecommerc/Controller/OnBoardingContoller.dart';
+import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:ecommerc/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,18 +30,27 @@ class CustomSlider extends GetView<OnBoardingControllerImp> {
                 const SizedBox(
                   height: 50,
                 ),
-                Text(onBoardinglist[i].title!,
-                    style: Theme.of(context).textTheme.headline1),
-                // const SizedBox(
-                //   height: 80,
-                // ),
+                Text(
+                  onBoardinglist[i].title!,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: AppColor.black),
+                  // const SizedBox(
+                  //   height: 80,
+                ),
                 Container(
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  child: Text(onBoardinglist[i].body!,
+                    alignment: Alignment.center,
+                    width: double.infinity,
+                    child: Text(
+                      onBoardinglist[i].body!,
                       textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyText1),
-                )
+                      style: const TextStyle(
+                          height: 2,
+                          color: AppColor.grey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    ))
               ],
             ));
   }

@@ -26,9 +26,7 @@ class CustomButton extends GetView<OnBoardingControllerImp> {
             // color: AppColor.primary,
             textColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 2),
-            child: GetBuilder<OnBoardingControllerImp>(builder: (controller) {
-              return Text(controller.text);
-            }),
+            child: Text(text),
           ),
         ));
   }

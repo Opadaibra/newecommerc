@@ -6,19 +6,18 @@ import 'package:get/get.dart';
 
 abstract class CheckemailController extends GetxController {
   checkemail();
-  gotosuccesSignup();
+  gotoverifycodesignup();
 }
 
 class CheckemailControllerImp extends CheckemailController {
   late TextEditingController email;
 
-
   @override
   checkemail() {}
 
   @override
-  gotosuccesSignup() {
-    Get.toNamed(AppRout.successsignup);
+  gotoverifycodesignup() {
+    Get.toNamed(AppRout.verifycodesignup);
   }
 
   @override

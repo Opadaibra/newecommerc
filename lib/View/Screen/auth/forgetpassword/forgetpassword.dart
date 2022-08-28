@@ -27,7 +27,7 @@ class ForgetPassword extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("Forget Password",
+          title: Text("40".tr,
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -50,30 +50,26 @@ class ForgetPassword extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Customtitltetextauth(
-                  title: "Check Email ",
+                Customtitltetextauth(
+                  title: "27".tr,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Custombodyauth(
-                  body:
-                      "Please Enter your Email Address to Recive A verfication code",
-                ),
+                Custombodyauth(body: "29".tr),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomTextField(
-                  hinttext: "Enter Your Email",
-                  labeltext: "Email",
+                  hinttext: "12".tr,
+                  labeltext: "18".tr,
                   iconData: Icons.email_outlined,
                   mycontroller: controller.email,
                 ),
                 Customauthbutton(
-                  text: "Check ",
+                  text: "30".tr,
                   onPressed: () {
                     controller.gotoverifycode();
-              
                   },
                 ),
                 const SizedBox(

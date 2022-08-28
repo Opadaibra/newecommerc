@@ -26,7 +26,7 @@ class Checkemail extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("Check email",
+          title: Text("27".tr,
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -49,29 +49,26 @@ class Checkemail extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Customtitltetextauth(
-                  title: "Success SignUp ",
+                Customtitltetextauth(
+                  title: "28".tr,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Custombodyauth(
-                  body:
-                      "Please Enter your Email Address to Recive A verfication code",
-                ),
+                Custombodyauth(body: "29".tr),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomTextField(
-                  hinttext: "Enter Your Email",
-                  labeltext: "Email",
+                  hinttext: "12".tr,
+                  labeltext: "18".tr,
                   iconData: Icons.email_outlined,
                   mycontroller: controller.email,
                 ),
                 Customauthbutton(
-                  text: "Check ",
+                  text: "30".tr,
                   onPressed: () {
-                    controller.gotosuccesSignup();
+                    controller.gotoverifycodesignup();
                   },
                 ),
                 const SizedBox(

@@ -19,7 +19,7 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text("Sign In",
+          title: Text("9".tr,
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -43,45 +43,44 @@ class Login extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Customtitltetextauth(
-                  title: "Welcome Back",
+                 Customtitltetextauth(
+                  title: "10".tr,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Custombodyauth(
-                  body:
-                      "Sign in with Your Email And Password OR Continue With Social Media",
+                 Custombodyauth(
+                  body:"11".tr
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomTextField(
-                    hinttext: "Enter Your Email",
-                    labeltext: "Email",
+                    hinttext: "12".tr,
+                    labeltext: "18".tr,
                     iconData: Icons.email_outlined,
                     mycontroller: controller.email),
                 CustomTextField(
-                    hinttext: "Enter Your Password",
-                    labeltext: "Password",
+                    hinttext: "13".tr,
+                    labeltext: "19".tr,
                     iconData: Icons.lock_outline,
                     mycontroller: controller.password),
                 InkWell(
                     onTap: () {
                       controller.gotoforgetpassword();
                     },
-                    child: const Text("Forget Password",
+                    child:  Text("14".tr,
                         textAlign: TextAlign.start)),
                 Customauthbutton(
-                  text: "Sign In ",
+                  text: "15".tr,
                   onPressed: () {},
                 ),
                 const SizedBox(
                   height: 40,
                 ),
                 CustomTextauth(
-                  text1: "You Don't Have an account?",
-                  text2: "Sign Up",
+                  text1: "16".tr,
+                  text2: "17".tr,
                   onTap: () {
                     controller.gotosignup();
                   },

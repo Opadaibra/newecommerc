@@ -27,7 +27,7 @@ class Verifycode extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("Verification Code",
+          title: Text("42".tr,
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -50,9 +50,8 @@ class Verifycode extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Customtitltetextauth(
-                  title:
-                      "Enter The code that you have recived on your Email Address",
+                 Customtitltetextauth(
+                  title:"43".tr
                 ),
                 const SizedBox(
                   height: 20,

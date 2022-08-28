@@ -25,11 +25,11 @@ class OnBoarding extends StatelessWidget {
               ),
               Expanded(
                   flex: 1,
-                  child: Column(children: const [
-                    DotController(),
-                    Spacer(flex: 2),
+                  child: Column(children: [
+                    const DotController(),
+                    const Spacer(flex: 2),
                     CustomButton(
-                      text: "Continue",
+                      text: "8".tr,
                     ),
                   ]))
             ],

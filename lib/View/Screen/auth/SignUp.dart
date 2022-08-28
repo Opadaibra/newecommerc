@@ -1,4 +1,3 @@
-
 // ignore_for_file: file_names
 
 import 'package:ecommerc/Controller/auth/signUp.Controller.dart';
@@ -31,7 +30,7 @@ class SignUp extends StatelessWidget {
               Get.back();
             },
           ),
-          title: Text("Sign Up",
+          title: Text("17".tr,
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -57,47 +56,44 @@ class SignUp extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Customtitltetextauth(
-                  title: "Welcome ",
+                Customtitltetextauth(
+                  title: "39".tr,
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                const Custombodyauth(
-                  body:
-                      "Sign Up with Your Email And Password OR Continue With Social Media",
-                ),
+                Custombodyauth(body: "24".tr),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomTextField(
-                  hinttext: "Enter Your Username",
-                  labeltext: "Username",
+                  hinttext: "23".tr,
+                  labeltext: "20".tr,
                   iconData: Icons.person,
                   mycontroller: controller.username,
                 ),
                 CustomTextField(
-                  hinttext: "Enter Your Email",
-                  labeltext: "Email",
+                  hinttext: "12".tr,
+                  labeltext: "18".tr,
                   iconData: Icons.email_outlined,
                   mycontroller: controller.email,
                 ),
                 CustomTextField(
-                  hinttext: "Enter Your Phone",
-                  labeltext: "Phone",
+                  hinttext: "22".tr,
+                  labeltext: "21".tr,
                   iconData: Icons.phone,
                   mycontroller: controller.password,
                 ),
                 CustomTextField(
-                  hinttext: "Enter Your Password",
-                  labeltext: "Password",
+                  hinttext: "13".tr,
+                  labeltext: "19".tr,
                   iconData: Icons.lock_outline,
                   mycontroller: controller.password,
                 ),
 
                 //const Text("Forget Password", textAlign: TextAlign.start),
                 Customauthbutton(
-                  text: "Sign Up ",
+                  text: "17".tr,
                   onPressed: () {
                     controller.signup();
                   },
@@ -106,8 +102,8 @@ class SignUp extends StatelessWidget {
                   height: 40,
                 ),
                 CustomTextauth(
-                    text1: "you Already Have an account?",
-                    text2: "Sign In",
+                    text1: "25".tr,
+                    text2: "26".tr,
                     onTap: () {
                       controller.gotosignin();
                     })
