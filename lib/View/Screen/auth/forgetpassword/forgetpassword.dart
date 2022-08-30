@@ -1,6 +1,6 @@
 import 'package:ecommerc/Controller/auth/ForgetPasswordController.dart';
 import 'package:ecommerc/Core/functions/ValidInput.dart';
-import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
+import 'package:ecommerc/View/Widget/CustomButton.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
@@ -73,7 +73,7 @@ class ForgetPassword extends StatelessWidget {
                     mycontroller: controller.email,
                     textInputType: TextInputType.emailAddress,
                   ),
-                  Customauthbutton(
+                  Custombutton(
                     text: "30".tr,
                     onPressed: () {
                       controller.gotoverifycode();

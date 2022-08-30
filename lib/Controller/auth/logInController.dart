@@ -2,6 +2,7 @@
 
 import 'package:ecommerc/data/datasource/static/Approut.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class LogInController extends GetxController {
@@ -14,6 +15,20 @@ class LogInControllerImp extends LogInController {
   late TextEditingController email;
   late TextEditingController password;
   GlobalKey<FormState> formState = GlobalKey<FormState>();
+  IconData isshowpassowrdicon = Icons.visibility;
+  bool isshowpassword = true;
+  showpassowrd() {
+    isshowpassword = isshowpassword == true ? false : true;
+    update();
+  }
+
+  showpasswordicon() {
+    isshowpassowrdicon = isshowpassowrdicon == Icons.visibility
+        ? Icons.visibility_off
+        : Icons.visibility;
+    update();
+  }
+
   @override
   login() {
     var formdata = formState.currentState;

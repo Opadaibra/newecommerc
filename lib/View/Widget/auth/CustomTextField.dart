@@ -9,16 +9,20 @@ class CustomTextField extends StatelessWidget {
   final IconData iconData;
   final TextEditingController mycontroller;
   final TextInputType textInputType;
+  final bool obs;
   final String? Function(String?) valid;
-  const CustomTextField({
-    Key? key,
-    required this.hinttext,
-    required this.labeltext,
-    required this.iconData,
-    required this.mycontroller,
-    required this.valid,
-    required this.textInputType,
-  }) : super(key: key);
+  final void Function()? ontapicon;
+  const CustomTextField(
+      {Key? key,
+      required this.hinttext,
+      required this.labeltext,
+      required this.iconData,
+      required this.mycontroller,
+      required this.valid,
+      required this.textInputType,
+      this.obs = false,
+      this.ontapicon})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +45,13 @@ class CustomTextField extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.always,
           contentPadding:
               const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-          suffixIcon: Icon(
-            iconData,
-            color: AppColor.primary,
+          suffixIcon: IconButton(
+            splashRadius: 20,
+            onPressed: ontapicon,
+            icon: Icon(
+              iconData,
+              color: AppColor.primary,
+            ),
           ),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30),
@@ -52,6 +60,7 @@ class CustomTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               borderSide: const BorderSide(color: AppColor.primary)),
         ),
+        obscureText: obs,
       ),
     );
   }

@@ -1,8 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:ecommerc/Controller/OnBoardingContoller.dart';
-import 'package:ecommerc/View/Widget/CustomButton.dart';
+
 import 'package:ecommerc/View/Widget/CustomSlider.dart';
+import 'package:ecommerc/View/Widget/boardingbutton.dart';
+import 'package:ecommerc/View/Widget/custombutton.dart';
 import 'package:ecommerc/View/Widget/dotController.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +30,7 @@ class OnBoarding extends StatelessWidget {
                   child: Column(children: [
                     const DotController(),
                     const Spacer(flex: 2),
-                    CustomButton(
+                    BoardinButton(
                       text: "8".tr,
                     ),
                   ]))

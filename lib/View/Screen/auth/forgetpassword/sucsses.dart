@@ -1,5 +1,5 @@
 import 'package:ecommerc/Controller/auth/successresetcontoller.dart';
-import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
+import 'package:ecommerc/View/Widget/CustomButton.dart';
 import 'package:ecommerc/data/datasource/static/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +34,7 @@ class Successpassword extends StatelessWidget {
           Container(
               margin: const EdgeInsets.symmetric(horizontal: 30),
               width: double.infinity,
-              child: Customauthbutton(
+              child: Custombutton(
                   text: "31".tr,
                   onPressed: () {
                     controller.gotologin();

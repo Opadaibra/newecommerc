@@ -50,7 +50,11 @@ class MyTranslation extends Translations {
           "42": "كود التحقق",
           "43": "أدخل الكود الذي تم إرساله للبريد الالكتروني الذي أدخلته",
           "44": "أعد إدخال كلمة المرور",
-          "45": "تأكيد كلمة المرور"
+          "45": "تأكيد كلمة المرور",
+          "46": "تنبيه",
+          "47":"هل تريد الخروج من التطبيق",
+          "48":"تأكيد",
+          "49":"إلغاء"
         },
         "en": {
           "1": "Choose Language",
@@ -101,7 +105,11 @@ class MyTranslation extends Translations {
           "42": "Verfication Code",
           "43": "Enter The code that you have recived on your Email",
           "44": "Re Enter Password",
-          "45": "RE Password"
+          "45": "RE Password",
+          "46": "alert",
+          "47":" you want to exit",
+          "48":"Confirm",
+          "49":"Cancel"
         }
       };
 }
