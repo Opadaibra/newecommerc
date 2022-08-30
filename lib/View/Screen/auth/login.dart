@@ -1,4 +1,5 @@
 import 'package:ecommerc/Controller/auth/logInController.dart';
+import 'package:ecommerc/Core/functions/ValidInput.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
 import 'package:ecommerc/View/Widget/auth/customtextauth.dart';
@@ -34,58 +35,68 @@ class Login extends StatelessWidget {
             behavior: const ScrollBehavior(
                 // ignore: deprecated_member_use
                 androidOverscrollIndicator: AndroidOverscrollIndicator.stretch),
-            child: ListView(
-              children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                const Logoauth(),
-                const SizedBox(
-                  height: 20,
-                ),
-                 Customtitltetextauth(
-                  title: "10".tr,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                 Custombodyauth(
-                  body:"11".tr
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                CustomTextField(
-                    hinttext: "12".tr,
-                    labeltext: "18".tr,
-                    iconData: Icons.email_outlined,
-                    mycontroller: controller.email),
-                CustomTextField(
-                    hinttext: "13".tr,
-                    labeltext: "19".tr,
-                    iconData: Icons.lock_outline,
-                    mycontroller: controller.password),
-                InkWell(
-                    onTap: () {
-                      controller.gotoforgetpassword();
+            child: Form(
+              key: controller.formState,
+              child: ListView(
+                children: [
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const Logoauth(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Customtitltetextauth(
+                    title: "10".tr,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Custombodyauth(body: "11".tr),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomTextField(
+                      valid: (val) {
+                        return validinput(val!, 5, 100, "email");
+                      },
+                      hinttext: "12".tr,
+                      labeltext: "18".tr,
+                      iconData: Icons.email_outlined,
+                      mycontroller: controller.email,
+                      textInputType: TextInputType.emailAddress),
+                  CustomTextField(
+                      valid: (val) {
+                        return validinput(val!, 5, 30, "password");
+                      },
+                      hinttext: "13".tr,
+                      labeltext: "19".tr,
+                      iconData: Icons.lock_outline,
+                      textInputType: TextInputType.visiblePassword,
+                      mycontroller: controller.password),
+                  InkWell(
+                      onTap: () {
+                        controller.gotoforgetpassword();
+                      },
+                      child: Text("14".tr, textAlign: TextAlign.start)),
+                  Customauthbutton(
+                    text: "15".tr,
+                    onPressed: () {
+                      controller.login();
                     },
-                    child:  Text("14".tr,
-                        textAlign: TextAlign.start)),
-                Customauthbutton(
-                  text: "15".tr,
-                  onPressed: () {},
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                CustomTextauth(
-                  text1: "16".tr,
-                  text2: "17".tr,
-                  onTap: () {
-                    controller.gotosignup();
-                  },
-                )
-              ],
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  CustomTextauth(
+                    text1: "16".tr,
+                    text2: "17".tr,
+                    onTap: () {
+                      controller.gotosignup();
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ));

@@ -7,13 +7,17 @@ class CustomTextField extends StatelessWidget {
   final String hinttext;
   final String labeltext;
   final IconData iconData;
- final TextEditingController mycontroller;
+  final TextEditingController mycontroller;
+  final TextInputType textInputType;
+  final String? Function(String?) valid;
   const CustomTextField({
     Key? key,
     required this.hinttext,
     required this.labeltext,
     required this.iconData,
     required this.mycontroller,
+    required this.valid,
+    required this.textInputType,
   }) : super(key: key);
 
   @override
@@ -21,6 +25,8 @@ class CustomTextField extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       child: TextFormField(
+        keyboardType: textInputType,
+        validator: valid,
         cursorColor: AppColor.primary,
         decoration: InputDecoration(
           label: Container(

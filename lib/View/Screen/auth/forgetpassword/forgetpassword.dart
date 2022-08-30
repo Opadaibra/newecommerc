@@ -1,4 +1,5 @@
 import 'package:ecommerc/Controller/auth/ForgetPasswordController.dart';
+import 'package:ecommerc/Core/functions/ValidInput.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
@@ -42,40 +43,47 @@ class ForgetPassword extends StatelessWidget {
             behavior: const ScrollBehavior(
                 // ignore: deprecated_member_use
                 androidOverscrollIndicator: AndroidOverscrollIndicator.stretch),
-            child: ListView(
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Customtitltetextauth(
-                  title: "27".tr,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Custombodyauth(body: "29".tr),
-                const SizedBox(
-                  height: 30,
-                ),
-                CustomTextField(
-                  hinttext: "12".tr,
-                  labeltext: "18".tr,
-                  iconData: Icons.email_outlined,
-                  mycontroller: controller.email,
-                ),
-                Customauthbutton(
-                  text: "30".tr,
-                  onPressed: () {
-                    controller.gotoverifycode();
-                  },
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-              ],
+            child: Form(
+              key: controller.formState,
+              child: ListView(
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Customtitltetextauth(
+                    title: "27".tr,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Custombodyauth(body: "29".tr),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomTextField(
+                    valid: (val) {
+                      return validinput(val!, 5, 100, "email");
+                    },
+                    hinttext: "12".tr,
+                    labeltext: "18".tr,
+                    iconData: Icons.email_outlined,
+                    mycontroller: controller.email,
+                    textInputType: TextInputType.emailAddress,
+                  ),
+                  Customauthbutton(
+                    text: "30".tr,
+                    onPressed: () {
+                      controller.gotoverifycode();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                ],
+              ),
             ),
           ),
         ));

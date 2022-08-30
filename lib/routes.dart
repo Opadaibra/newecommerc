@@ -1,6 +1,5 @@
 import 'package:ecommerc/View/Screen/OnBoarding.dart';
 import 'package:ecommerc/View/Screen/auth/SignUp.dart';
-import 'package:ecommerc/View/Screen/auth/checkemail.dart';
 import 'package:ecommerc/View/Screen/auth/forgetpassword/forgetpassword.dart';
 import 'package:ecommerc/View/Screen/auth/login.dart';
 import 'package:ecommerc/View/Screen/auth/forgetpassword/resetpassword.dart';
@@ -21,8 +20,6 @@ Map<String, Widget Function(BuildContext context)> routes = {
   AppRout.resetpassword: (context) => const ResetPassword(),
   AppRout.success: (context) => const Successpassword(),
   AppRout.successsignup: (context) => const SuccessSignup(),
-  AppRout.checkemail: (context) => const Checkemail(),
-
   //OnBoarding
   AppRout.onboarding: (context) => const OnBoarding()
 };

@@ -12,13 +12,20 @@ abstract class ResetPasswordControllre extends GetxController {
 class ResetPasswordControllreImp extends ResetPasswordControllre {
   late TextEditingController password;
   late TextEditingController repassword;
-
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   @override
   checkcode() {}
 
   @override
   gotosuccess() {
-    Get.toNamed(AppRout.success);
+    var formdata = formState.currentState;
+    if (formdata!.validate()) {
+      print("valid data");
+        Get.toNamed(AppRout.success);
+    } else {
+      print("not valid data");
+    }
+  
   }
 
   @override

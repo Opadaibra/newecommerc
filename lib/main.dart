@@ -3,6 +3,7 @@ import 'package:ecommerc/Core/Localization/changelocal.dart';
 import 'package:ecommerc/Core/Localization/translation.dart';
 import 'package:ecommerc/Core/services/services.dart';
 import 'package:ecommerc/View/Screen/Language.dart';
+import 'package:ecommerc/binding.dart';
 import 'package:ecommerc/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -31,9 +32,8 @@ class MyApp extends StatelessWidget {
       translations: MyTranslation(),
       theme: controller.appTheme,
       home: const Language(),
+      initialBinding: MyBinding(),
       routes: routes,
     );
   }
 }
-
-

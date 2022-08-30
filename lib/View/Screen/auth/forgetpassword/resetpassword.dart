@@ -1,4 +1,5 @@
 import 'package:ecommerc/Controller/auth/resetpasswordcontroller.dart';
+import 'package:ecommerc/Core/functions/ValidInput.dart';
 import 'package:ecommerc/View/Widget/auth/CustomButtonAuth.dart';
 import 'package:ecommerc/View/Widget/auth/CustomTextField.dart';
 import 'package:ecommerc/View/Widget/auth/customtitleauth.dart';
@@ -16,7 +17,7 @@ class ResetPassword extends StatelessWidget {
     // TextEditingController password = TextEditingController();
     ResetPasswordControllreImp controller =
         Get.put(ResetPasswordControllreImp());
-    
+
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -43,46 +44,57 @@ class ResetPassword extends StatelessWidget {
             behavior: const ScrollBehavior(
                 // ignore: deprecated_member_use
                 androidOverscrollIndicator: AndroidOverscrollIndicator.stretch),
-            child: ListView(
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Customtitltetextauth(
-                  title: "35".tr,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Custombodyauth(body: "34".tr),
-                const SizedBox(
-                  height: 30,
-                ),
-                CustomTextField(
-                  hinttext: "13".tr,
-                  labeltext: "19".tr,
-                  iconData: Icons.lock_outline,
-                  mycontroller: controller.password,
-                ),
-                CustomTextField(
-                  hinttext: "44".tr,
-                  labeltext: "45".tr,
-                  iconData: Icons.lock_outline,
-                  mycontroller: controller.repassword,
-                ),
-                Customauthbutton(
-                  text: "33".tr,
-                  onPressed: () {
-                    controller.gotosuccess();
-                  },
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-              ],
+            child: Form(
+              key: controller.formState,
+              child: ListView(
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Customtitltetextauth(
+                    title: "35".tr,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Custombodyauth(body: "34".tr),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  CustomTextField(
+                    valid: (val) {
+                      return validinput(val!, 5, 30, "password");
+                    },
+                    hinttext: "13".tr,
+                    labeltext: "19".tr,
+                    iconData: Icons.lock_outline,
+                    mycontroller: controller.password,
+                    textInputType: TextInputType.visiblePassword,
+                  ),
+                  CustomTextField(
+                    valid: (val) {
+                      return validinput(val!, 5, 30, "password");
+                    },
+                    hinttext: "44".tr,
+                    labeltext: "45".tr,
+                    iconData: Icons.lock_outline,
+                    mycontroller: controller.repassword,
+                    textInputType: TextInputType.visiblePassword,
+                  ),
+                  Customauthbutton(
+                    text: "33".tr,
+                    onPressed: () {
+                      controller.gotosuccess();
+                    },
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                ],
+              ),
             ),
           ),
         ));
