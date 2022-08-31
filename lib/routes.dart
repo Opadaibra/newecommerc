@@ -1,3 +1,5 @@
+import 'package:ecommerc/Core/middleware/mymiddleware.dart';
+import 'package:ecommerc/View/Screen/Language.dart';
 import 'package:ecommerc/View/Screen/OnBoarding.dart';
 import 'package:ecommerc/View/Screen/auth/SignUp.dart';
 import 'package:ecommerc/View/Screen/auth/forgetpassword/forgetpassword.dart';
@@ -9,17 +11,21 @@ import 'package:ecommerc/View/Screen/auth/forgetpassword/verifycode.dart';
 import 'package:ecommerc/View/Screen/auth/verifycodesignup.dart';
 import 'package:ecommerc/data/datasource/static/Approut.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-Map<String, Widget Function(BuildContext context)> routes = {
-  //Auth
-  AppRout.login: (context) => const Login(),
-  AppRout.signup: (context) => const SignUp(),
-  AppRout.forgetpassword: (context) => const ForgetPassword(),
-  AppRout.verifycode: (context) => const Verifycode(),
-  AppRout.verifycodesignup: (context) => const VerifycodeSignUp(),
-  AppRout.resetpassword: (context) => const ResetPassword(),
-  AppRout.success: (context) => const Successpassword(),
-  AppRout.successsignup: (context) => const SuccessSignup(),
+List<GetPage<dynamic>> routes = [
+  GetPage(
+      name: "/", page: () => const Language(), middlewares: [Mymiddleware()]),
+
+  GetPage(name: AppRout.login, page: () => const Login()),
+  GetPage(name: AppRout.signup, page: () => const SignUp()),
+  GetPage(name: AppRout.forgetpassword, page: () => const ForgetPassword()),
+  GetPage(name: AppRout.verifycode, page: () => const Verifycode()),
+  GetPage(name: AppRout.verifycodesignup, page: () => const VerifycodeSignUp()),
+  GetPage(name: AppRout.resetpassword, page: () => const ResetPassword()),
+  GetPage(name: AppRout.success, page: () => const Successpassword()),
+  GetPage(name: AppRout.successsignup, page: () => const SuccessSignup()),
   //OnBoarding
-  AppRout.onboarding: (context) => const OnBoarding()
-};
+  GetPage(name: AppRout.onboarding, page: () => const OnBoarding()),
+];
+ 

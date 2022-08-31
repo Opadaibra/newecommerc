@@ -4,6 +4,8 @@ import 'package:ecommerc/data/datasource/static/static.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../Core/services/services.dart';
+
 abstract class OnBoardingController extends GetxController {
   next();
   onpagechagned(int index);
@@ -14,10 +16,12 @@ class OnBoardingControllerImp extends OnBoardingController {
   int currentpage = 0;
   late PageController pageController;
   String text = "Continue";
+  MyServecices myServecices = Get.find();
   @override
   next() {
     currentpage++;
     if (currentpage > onBoardinglist.length - 1) {
+      myServecices.sharedPreferences.setString("onboarding", "1");
       Get.offAllNamed(AppRout.login);
     }
 
